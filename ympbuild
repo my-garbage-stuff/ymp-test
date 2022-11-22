@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+name='example'
+release='1'
+version='1.0'
+url='https://example.org'
+description='Package description missing'
+email='siz@e-posta.com'
+maintainer='Adınız'
+license=('GPLv3')
+source=(main.c)
+depends=( )
+makedepends=( )
+md5sums=('SKIP')
+uses=()
+arch=('x86_64')
+
+build(){
+    gcc main.c -o example
+}
+package(){
+    mkdir -p ${DESTDIR}/bin/
+    install example ${DESTDIR}/bin/example
+}
